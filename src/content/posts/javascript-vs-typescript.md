@@ -2,7 +2,7 @@
 title: Javascript vs TypeScript
 description: A comparison between javascript and typescript
 date: 2026-11-23
-draft: true
+draft: false
 ---
 # A Brief Comparison Between javascript and typescript
 
