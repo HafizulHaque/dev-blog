@@ -1,0 +1,7 @@
+body {
+  max-width: 760px;
+  margin: 60px auto;
+  padding: 0 24px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.7;
+}
