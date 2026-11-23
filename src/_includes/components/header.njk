@@ -1,7 +1,7 @@
 <header class="site-header">
-  <a class="site-title" href="/">{{ site.name }}</a>
+  <a class="site-title" href="{{ '/' | url }}">{{ site.name }}</a>
   <nav>
-    <a href="/articles/">Articles</a>
-    <a href="/about/">About</a>
+    <a href="{{ '/articles/' | url }}">Articles</a>
+    <a href="{{ '/about/' | url }}">About</a>
   </nav>
 </header>

@@ -2,7 +2,10 @@ import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 import { DateTime } from "luxon";
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyVitePlugin);
+  // Vite's own config file is not read here (the plugin builds from a temp root), so options go through the plugin
+  eleventyConfig.addPlugin(EleventyVitePlugin, {
+    viteOptions: { base: process.env.BASE_PATH || "/" },
+  });
 
   // Vite resolves /assets/... from Eleventy's output, so the files must be copied there
   eleventyConfig.addPassthroughCopy("src/assets");
@@ -25,6 +28,7 @@ export default function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: process.env.BASE_PATH || "/",
     dir: {
       input: "src",
       includes: "_includes",

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
+    "validate": "node scripts/validate-content.js",
     "debug": "cross-env DEBUG=Eleventy* eleventy"
   },
   "devDependencies": {
