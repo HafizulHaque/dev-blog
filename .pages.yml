@@ -1,0 +1,44 @@
+media:
+  input: src/assets/images
+  output: /assets/images
+  rename: safe
+  categories: [image]
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    exclude: [posts.json, posts.11tydata.js]
+    subfolders: false
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: draft
+        label: Draft (hidden from the live site)
+        type: boolean
+        default: false
+      - name: body
+        label: Content
+        type: rich-text
