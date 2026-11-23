@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.name }}</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body>
-  <h1>{{ site.name }}</h1>
-  <p>{{ site.description }}</p>
+---
+layout: layouts/base.njk
+permalink: /index.html
+---
+<h1>{{ site.name }}</h1>
+<p class="lead">{{ site.description }}</p>
 
-  <script type="module" src="/assets/js/main.js"></script>
-</body>
-</html>
+<h2>Latest articles</h2>
+{% set posts = collections.articles | reverse %}
+{% include "components/post-list.njk" %}
